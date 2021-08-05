@@ -80,6 +80,17 @@ namespace ProductReviewTest
             Product.Equals(actual);
 
         }
-
+        //UC7- Retrive product id
+        public void RetriveProductIds()
+        {
+            string expected = "1 7 3 8 2 6 1 8 5 4 10 3 9 2 7 1 9 4 6 2 8 3 5 6 9 ";
+            int[] list = review.RetriveOnlyProductIdMethod();
+            string actual = "";
+            foreach (var l in list)
+            {
+                actual += "" + l + " ";
+            }
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

@@ -92,5 +92,11 @@ namespace ProductReviewManagement
             Console.WriteLine("Top 5 products");
             return res;
         }
+        //UC7-Retrive product Id from list
+        public int[] RetriveOnlyProductIdMethod()
+        {
+            int[] res = Product.Select(x => x.ProductId).ToArray();
+            return res;
+        }
     }
 }
