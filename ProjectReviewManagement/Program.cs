@@ -1,12 +1,14 @@
 ﻿using System;
 
-namespace ProjectReviewManagement
+namespace ProductReviewManagement
 {
     class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Product Review Management");
+            ReviewManager review = new ReviewManager();
+            review.AddReviews();
         }
     }
 }
