@@ -9,6 +9,7 @@ namespace ProductReviewManagement
             Console.WriteLine("Welcome to Product Review Management");
             ReviewManager review = new ReviewManager();
             review.AddReviews();
+            review.Top3RatedProduct();
         }
     }
 }
