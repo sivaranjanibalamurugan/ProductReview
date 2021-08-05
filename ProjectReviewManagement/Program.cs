@@ -8,14 +8,13 @@ namespace ProductReviewManagement
         {
             Console.WriteLine("Welcome to Product Review Management");
             ReviewManager review = new ReviewManager();
+
             review.AddReviews();
-           // review.Top3RatedProduct();
-           // review.IterateMethod(review.RetrivalRecordRatingGreaterThan3());
-            //review.RetriveOnlyProductId();
-            review.SkipTop5Record();
-          //  review.RetriveOnlyProductIdMethod();
-            review.AverageOfRating();
-            //review.CountOfUser();
+            review.IterateMethod(review.Top3RatedProduct());
+            review.IterateMethod(review.RetrivalRecordRatingGreaterThan3());
+            review.IterateMethod(review.SkipTop5Record());
+            review.RetrivingBasedOnReview("good");
+            review.CountOfUser();
 
         }
     }
