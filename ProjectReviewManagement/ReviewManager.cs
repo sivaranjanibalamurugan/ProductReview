@@ -151,5 +151,11 @@ namespace ProductReviewManagement
                 Console.WriteLine(r);
             }
         }
+        //UC12-Retriving the record of given user order by rating
+        public List<ProductReview> RetriveTheRecordOfUserId(int userId)
+        {
+            var res = Product.OrderByDescending(x => x.rating).Where(x => x.userId == userId).ToList();
+            return res;
+        }
     }
 }
