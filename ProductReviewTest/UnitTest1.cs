@@ -30,6 +30,13 @@ namespace ProductReviewTest
             List<ProductReview> actual = review.RetrivalRecordRatingGreaterThan3();
             expected.Equals(actual);
         }
-       
+        //UC4-Count of person gave review
+        public void CountOfUserReviewAProduct()
+        {
+            string expected = "8 3 1 5 6 9 10 4 7 2";
+            string actual = review.CountOfUser();
+            Assert.AreEqual(expected, actual);
+        }
+
     }
 }
