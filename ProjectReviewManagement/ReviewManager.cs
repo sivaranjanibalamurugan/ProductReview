@@ -79,5 +79,18 @@ namespace ProductReviewManagement
             }
             return result;
         }
+        //UC5-Retrive product Id from list
+        public int[] RetriveOnlyProductId()
+        {
+            int[] res = (from product in Product select product.ProductId).ToArray();
+            return res;
+        }
+        //UC6-skip top5  rated product from the list
+        public List<ProductReview> SkipTop5Record()
+        {
+            var res = (from product in Product orderby product.rating descending select product).Skip(5).ToList();
+            Console.WriteLine("Top 5 products");
+            return res;
+        }
     }
 }

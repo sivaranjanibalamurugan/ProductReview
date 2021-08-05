@@ -11,7 +11,9 @@ namespace ProductReviewManagement
             review.AddReviews();
            // review.Top3RatedProduct();
            // review.IterateMethod(review.RetrivalRecordRatingGreaterThan3());
-            review.CountOfUser();
+            //review.RetriveOnlyProductId();
+            review.SkipTop5Record();
+              review.CountOfUser();
         }
     }
 }

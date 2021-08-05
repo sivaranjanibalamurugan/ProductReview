@@ -9,6 +9,7 @@ namespace ProductReviewManagement
     public class ProductReview
     {
         public int ProductId { get; set;}
+        public string Product { get; set; }
         public int userId { get; set; }
         public int rating { get; set; }
         public string review { get; set; }
