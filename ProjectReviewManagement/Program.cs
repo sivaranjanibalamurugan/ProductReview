@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ProductReviewManagement
 {
@@ -8,13 +9,8 @@ namespace ProductReviewManagement
         {
             Console.WriteLine("Welcome to Product Review Management");
             ReviewManager review = new ReviewManager();
-
-            review.AddReviews();
-            review.IterateMethod(review.Top3RatedProduct());
-            review.IterateMethod(review.RetrivalRecordRatingGreaterThan3());
-            review.IterateMethod(review.SkipTop5Record());
-            review.RetrivingBasedOnReview("good");
-            review.CountOfUser();
+            List<ProductReview> list = review.AddReviews();
+            review.CreateDataTable(list);
 
         }
     }

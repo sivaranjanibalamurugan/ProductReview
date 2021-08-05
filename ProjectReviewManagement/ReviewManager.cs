@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,6 +52,15 @@ namespace ProductReviewManagement
             {
                 Console.WriteLine("Product Id:{0}\tUser Id:{1}\tRating:{2}\tReview:{3}\tIsLike:{4}", p.ProductId, p.userId, p.rating, p.review, p.isLike);
             }
+        }
+        public void IterateTable(DataTable table)
+        {
+            var res = (from table1 in table.AsEnumerable() select table1.Field<string>("ProductId")).ToList();
+            foreach (var p in res)
+            {
+                Console.WriteLine(p);
+            }
+
         }
         //UC2-Retrive top3  rated product from the list
         public List<ProductReview> Top3RatedProduct()
@@ -116,6 +126,21 @@ namespace ProductReviewManagement
             List<ProductReview> res = Product.Where(x => x.review.Equals(review)).ToList();
             return res;
 
+        }
+        //UC10-Creating the data table 
+        public void CreateDataTable(List<ProductReview> list)
+        {
+            DataTable dataTable = new DataTable();
+            dataTable.Columns.Add("ProductId");
+            dataTable.Columns.Add("UserId");
+            dataTable.Columns.Add("rating");
+            dataTable.Columns.Add("Reviews");
+            dataTable.Columns.Add("IsLike");
+            foreach (var l in list)
+            {
+                dataTable.Rows.Add(l.ProductId, l.userId, l.rating, l.review, l.isLike);
+            }
+            IterateTable(dataTable);
         }
     }
 }
