@@ -92,5 +92,12 @@ namespace ProductReviewTest
             }
             Assert.AreEqual(expected, actual);
         }
+        //UC8-Average by rating
+        public void AverageOfProductRating()
+        {
+            string expected = "10 12 9 8 8.333333333333334 6.75 5.5 6 8 10 12 7 8 9 6 7.5556 14 9.5558 11 8";
+            string actual = review.AverageOfRating();
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

@@ -98,5 +98,17 @@ namespace ProductReviewManagement
             int[] res = Product.Select(x => x.ProductId).ToArray();
             return res;
         }
+        //UC8-AverageOfRating
+        public string AverageOfRating()
+        {
+            string result = "";
+            var res = Product.GroupBy(p => p.ProductId, r => r.rating).Select(x => new { ProductId = x.Key, average = x.Average() });
+            foreach (var r in res)
+            {
+                Console.WriteLine("Product Id:{0}\tAverageOfRating:{1}", r.ProductId, r.average);
+                result += "" + r.ProductId + " " + r.average + " ";
+            }
+            return result;
+        }
     }
 }

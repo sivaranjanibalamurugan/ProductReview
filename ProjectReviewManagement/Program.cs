@@ -12,9 +12,10 @@ namespace ProductReviewManagement
            // review.Top3RatedProduct();
            // review.IterateMethod(review.RetrivalRecordRatingGreaterThan3());
             //review.RetriveOnlyProductId();
-            //review.SkipTop5Record();
-            review.RetriveOnlyProductIdMethod();
-            review.CountOfUser();
+            review.SkipTop5Record();
+          //  review.RetriveOnlyProductIdMethod();
+            review.AverageOfRating();
+            //review.CountOfUser();
 
         }
     }
