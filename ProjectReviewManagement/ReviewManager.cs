@@ -142,5 +142,14 @@ namespace ProductReviewManagement
             }
             IterateTable(dataTable);
         }
+        //UC11-Retrive the record from table where isLike field is true
+        public void RetriveFromTable(DataTable table)
+        {
+            var res = table.AsEnumerable().Where(x => x.Field<string>("IsLike").Equals("true")).Select(x => x.Field<string>("ProductId")).ToList();
+            foreach (var r in res)
+            {
+                Console.WriteLine(r);
+            }
+        }
     }
 }
